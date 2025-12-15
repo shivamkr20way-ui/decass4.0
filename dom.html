@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+  <style>
+    body {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+    }
+
+    .container {
+      background-color: wheat;
+      padding: 25px;
+      text-align: center;
+      height: 200px;
+      width: 700px;
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>DOM Text Updater</h1>
+
+    <p id="message">This text will be changed.</p>
+
+    <input type="text" id="userInput" placeholder="Type something here">
+    <button id="updateButton">Update Paragraph</button>
+  </div>
+
+  <script>
+    const input = document.getElementById('userInput');
+    const paragraph = document.getElementById('message');
+    const button = document.getElementById('updateButton');
+
+    button.addEventListener('click', function () {
+  const enteredText = input.value.trim();
+
+  if (enteredText === "") {
+    paragraph.textContent = "Please enter some text!";
+  } else {
+    paragraph.textContent = enteredText;
+  }
+});
+  </script>
+</body>
+</html>
